@@ -18,14 +18,14 @@ function setup() {
 
 function draw() {
 
-  fill(0);
+  fill(0, 5, 5);
   image(sm, 150, -60);
 
 
 }
 function mouseClicked() {
 
-  background(0, 5, 5)
+  background(0, 5, 5);
 
   slotResult1 = int(random(slots.length));
   slotResult2 = int(random(slots.length));
