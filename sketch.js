@@ -22,7 +22,7 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(bg, 5, 5, 100, 100);
+  background(bg, windowWidth, windowHeight);
   imageMode(CENTER);
 
 }
@@ -35,7 +35,7 @@ function draw() {
   image(cg, width*0.8, windowHeight/2.3, width*0.3, height*0.6);
 image(tb, windowWidth/1.4, windowHeight/1.2, windowWidth/2.1, windowHeight/1.9 );
 textFont(myFont);
-textSize(50);
+textSize(30);
 text(t, windowWidth/1.9, windowHeight/1.3, windowWidth/2.1, windowHeight/1.9);
 }
 function mouseClicked() {
@@ -61,11 +61,5 @@ rect(windowWidth*0.4,windowHeight*0.35, windowWidth*0.2, windowHeight*0.17);
 }
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
-  if (phase == 'display') {
-  display();
-} else if (phase == 'playing') {
-  slotmachine();
-  randomtext();
-}
-textResize();
+
 }
