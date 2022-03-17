@@ -5,7 +5,7 @@ let slotmachine;
 let display;
 
 let t = "Pull the lever to start!"
-
+let ts;
 
 
 function preload(){
@@ -24,7 +24,12 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(bg, windowWidth, windowHeight);
   imageMode(CENTER);
+  textResize();
+  frameRate(60);
 
+button = createButton('START');
+button.parent('button')
+button.mousePressed(roll);
 }
 
 function draw() {
@@ -35,10 +40,10 @@ function draw() {
   image(cg, width*0.8, windowHeight/2.3, width*0.3, height*0.6);
 image(tb, windowWidth/1.4, windowHeight/1.2, windowWidth/2.1, windowHeight/1.9 );
 textFont(myFont);
-textSize(30);
-text(t, windowWidth/1.9, windowHeight/1.3, windowWidth/2.1, windowHeight/1.9);
+textSize(ts);
+text(t, windowWidth/1.9, windowHeight/1.3, windowWidth/2.4, windowHeight/1.9);
 }
-function mouseClicked() {
+function roll() {
 
 
   fill(0, 0, 0);
@@ -47,6 +52,15 @@ rect(windowWidth*0.4,windowHeight*0.35, windowWidth*0.2, windowHeight*0.17);
   slotResult2 = int(random(slots.length));
   slotResult3 = int(random(slots.length));
 
+  if (slotResult1 == 0 && slotResult2 == 0 && slotResult3 == 0){
+  t = "BewmBoom";
+}else if (slotResult1 == 1 && slotResult2 == 1 && slotResult3 == 1){
+t = "Burger";
+}else if (slotResult1 == 2 && slotResult2 == 2 && slotResult3 == 2){
+t = "Father Duck";
+}else if (slotResult1 == 3 && slotResult2 == 3 && slotResult3 == 3){
+t = "Jackpot";
+}
 
   image(slots[slotResult1], width*0.435, height*0.43, width*0.06, height*0.08);
   image(slots[slotResult2], width*0.5, height*0.43, width*0.06, height*0.08);
@@ -60,6 +74,18 @@ rect(windowWidth*0.4,windowHeight*0.35, windowWidth*0.2, windowHeight*0.17);
 
 }
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
 
+	resizeCanvas(windowWidth, windowHeight);
+  image(bg, windowWidth/2, windowHeight/2, windowWidth, windowHeight);
 }
+
+function textResize(){
+  if(windowWidth > 1500){
+    ts = 50;
+  }else if (windowWidth > 1200){
+      ts = 30;
+  }else if (windowWidth > 900){
+    ts = 20;
+  }else if (windowWidth > 500)
+    ts = 10;
+  }
