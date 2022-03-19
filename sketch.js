@@ -24,7 +24,7 @@ function preload() {
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent('myCanvas');
-  mySound.pause();
+
   mySound.loop();
 
   background(bg, windowWidth, windowHeight,windowWidth/2, windowHeight/2);
