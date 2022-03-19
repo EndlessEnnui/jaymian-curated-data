@@ -62,23 +62,23 @@ function roll() {
   if (slotResult1 == 0 && slotResult2 == 0 && slotResult3 == 0) {
     t = "BewmBoom, originally a hero I conceptualized that has explosive capabilities depending on what he ate, he loves spicy food!";
       mySound2.play();
-      
+
   } else if (slotResult1 == 1 && slotResult2 == 1 && slotResult3 == 1) {
     t = "Burgers?! I love burgers! Not much else to say about them!";
       mySound2.play();
-      
+
   } else if (slotResult1 == 2 && slotResult2 == 2 && slotResult3 == 2) {
     t = "Father Duck! Calm and collected family man of his wife and daughter. But little do they know he is secretely the leader of a criminal syndicate! (Orignal concept done by my girlfriend)";
       mySound2.play();
-      
+
   } else if (slotResult1 == 3 && slotResult2 == 3 && slotResult3 == 3) {
     t = "WOAH LUCKY STRAIGHT! CONGRATULATIONS!!! No info this time, but enjoy your coins!";
       mySound2.play();
-      
+
   }else if (slotResult1 == 4  && slotResult2 == 4 && slotResult3 == 4) {
     t = "WOAH JACKPOT! THATS ME!!! Im a original character designed specifically for this project! Im said to give people the best luck when playing! Although I can't say the same for myself-";
       mySound2.play();
-      
+
   }
   image(slots[slotResult1], width * 0.435, height * 0.43, width * 0.06, height * 0.08);
   image(slots[slotResult2], width * 0.5, height * 0.43, width * 0.06, height * 0.08);
@@ -100,11 +100,11 @@ function windowResized() {
 
 function textResize() {
   if (windowWidth > 1500) {
-    ts = 40;
-  } else if (windowWidth > 1200) {
     ts = 20;
-  } else if (windowWidth > 900) {
+  } else if (windowWidth > 1200) {
     ts = 10;
-  } else if (windowWidth > 500)
+  } else if (windowWidth > 900) {
     ts = 5;
+  } else if (windowWidth > 500)
+    ts = 2;
 }
