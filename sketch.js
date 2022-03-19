@@ -23,11 +23,11 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(windowWidth/1.1, windowHeight);
   canvas.parent('myCanvas');
+  mySound.loop();
 
 
-    mySound.loop();
 
   background(bg, windowWidth, windowHeight,windowWidth/2, windowHeight/2);
   imageMode(CENTER);
@@ -37,6 +37,7 @@ function setup() {
   button = createButton('START');
   button.parent('button');
   button.mousePressed(roll);
+
 }
 
 function draw() {
