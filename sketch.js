@@ -5,6 +5,7 @@ let display;
 let t = "Push the button to start!"
 let ts;
 let mySound;
+let mySound2;
 
 function preload() {
   slots[0] = loadImage("images/1.png");
@@ -25,7 +26,8 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent('myCanvas');
 
-  mySound.loop();
+
+    mySound.loop();
 
   background(bg, windowWidth, windowHeight,windowWidth/2, windowHeight/2);
   imageMode(CENTER);
