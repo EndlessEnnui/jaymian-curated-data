@@ -27,7 +27,7 @@ function preload() {
 function setup() {
   canvas = createCanvas(windowWidth / 1.1, windowHeight);
   canvas.parent('myCanvas');
-  mySound.loop();
+
 
   x = 1;
 	changeDirection = false;
