@@ -6,6 +6,8 @@ let t = "Push the button to start!"
 let ts;
 let mySound;
 let mySound2;
+var x;
+var changeDirection;
 
 function preload() {
   slots[0] = loadImage("images/1.png");
@@ -23,16 +25,17 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth/1.1, windowHeight);
+  canvas = createCanvas(windowWidth / 1.1, windowHeight);
   canvas.parent('myCanvas');
   mySound.loop();
 
+  x = 1;
+	changeDirection = false;
 
-
-  background(bg, windowWidth, windowHeight,windowWidth/2, windowHeight/2);
+  background(bg, windowWidth, windowHeight, windowWidth / 2, windowHeight / 2);
   imageMode(CENTER);
   textResize();
-  frameRate(60);
+  frameRate(5);
 
   button = createButton('START');
   button.parent('button');
@@ -41,15 +44,14 @@ function setup() {
 }
 
 function draw() {
+image(sm, width * 0.5, height * 0.5, width * 0.325, height);
 
-  fill(0, 0, 0);
 
-  image(sm, width * 0.5, height * 0.5, width * 0.325, height);
-  image(cg, width * 0.8, windowHeight / 2.3, width * 0.3, height * 0.6);
-  image(tb, windowWidth / 1.4, windowHeight / 1.2, windowWidth / 2.1, windowHeight / 1.9);
-  textFont(myFont);
-  textSize(ts);
-  text(t, windowWidth / 1.9, windowHeight / 1.3, windowWidth / 2.7, windowHeight / 1.9);
+
+
+
+  jackPot();
+  textBox();
 }
 
 function roll() {
@@ -64,23 +66,23 @@ function roll() {
 
   if (slotResult1 == 0 && slotResult2 == 0 && slotResult3 == 0) {
     t = "BewmBoom, originally a hero I conceptualized that has explosive capabilities depending on what he ate, he loves spicy food!";
-      mySound2.play();
+    mySound2.play();
 
   } else if (slotResult1 == 1 && slotResult2 == 1 && slotResult3 == 1) {
     t = "Burgers?! I love burgers! Not much else to say about them!";
-      mySound2.play();
+    mySound2.play();
 
   } else if (slotResult1 == 2 && slotResult2 == 2 && slotResult3 == 2) {
     t = "Father Duck! Calm and collected family man of his wife and daughter. But little do they know he is secretely the leader of a criminal syndicate! (Orignal concept done by my girlfriend)";
-      mySound2.play();
+    mySound2.play();
 
   } else if (slotResult1 == 3 && slotResult2 == 3 && slotResult3 == 3) {
     t = "WOAH LUCKY STRAIGHT! CONGRATULATIONS!!! No info this time, but enjoy your coins!";
-      mySound2.play();
+    mySound2.play();
 
-  }else if (slotResult1 == 4  && slotResult2 == 4 && slotResult3 == 4) {
+  } else if (slotResult1 == 4 && slotResult2 == 4 && slotResult3 == 4) {
     t = "WOAH JACKPOT! THATS ME!!! Im a original character designed specifically for this project! Im said to give people the best luck when playing! Although I can't say the same for myself-";
-      mySound2.play();
+    mySound2.play();
 
   }
   image(slots[slotResult1], width * 0.435, height * 0.43, width * 0.06, height * 0.08);
@@ -110,4 +112,33 @@ function textResize() {
     ts = 5;
   } else if (windowWidth > 500)
     ts = 2;
+}
+function jackPot(){
+  push();
+
+//image(bg, windowWidth/2, windowHeight/2, windowWidth, windowHeight);
+  translate(x,0, 0);
+
+  image(cg, width * 0.8, windowHeight / 2.3, width * 0.3, height * 0.6);
+
+ if(x>5){
+   changeDirection=true}
+ else if (x<=0){
+   changeDirection=false}
+ if (x>=0 && changeDirection == false){
+   x=x+1}
+ else if(changeDirection == true){
+   x=x-1
+}
+console.log (windowHeight);
+
+  pop();
+}
+function textBox(){
+  push();
+  image(tb, windowWidth / 1.4, windowHeight / 1.2, windowWidth / 2.1, windowHeight / 1.9);
+  textFont(myFont);
+  textSize(ts);
+  text(t, windowWidth / 1.9, windowHeight / 1.3, windowWidth / 2.7, windowHeight / 1.9);
+pop();
 }
