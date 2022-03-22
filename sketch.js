@@ -27,8 +27,8 @@ function preload() {
 function setup() {
   canvas = createCanvas(windowWidth / 1.1, windowHeight);
   canvas.parent('myCanvas');
-  mySound.loop();
 
+  rectMode(CENTER);
   x = 1;
 	changeDirection = false;
 
@@ -44,7 +44,7 @@ function setup() {
 }
 
 function draw() {
-image(sm, width * 0.5, height * 0.5, width * 0.325, height);
+image(sm, windowWidth * 0.455, windowHeight * 0.5, windowWidth * 0.325, windowHeight);
 
 
 
@@ -59,7 +59,7 @@ function roll() {
   t = "No luck, try again!";
 
   fill(0, 0, 0);
-  rect(windowWidth * 0.4, windowHeight * 0.35, windowWidth * 0.2, windowHeight * 0.17);
+  rect(windowWidth * 0.454, windowHeight * 0.435, windowWidth * 0.19, windowHeight * 0.17);
   slotResult1 = int(random(slots.length));
   slotResult2 = int(random(slots.length));
   slotResult3 = int(random(slots.length));
@@ -85,9 +85,9 @@ function roll() {
     mySound2.play();
 
   }
-  image(slots[slotResult1], width * 0.435, height * 0.43, width * 0.06, height * 0.08);
-  image(slots[slotResult2], width * 0.5, height * 0.43, width * 0.06, height * 0.08);
-  image(slots[slotResult3], width * 0.565, height * 0.43, width * 0.06, height * 0.08);
+  image(slots[slotResult1], windowWidth * 0.39, windowHeight * 0.43, windowWidth * 0.06, windowHeight * 0.08);
+  image(slots[slotResult2], windowWidth * 0.455, windowHeight * 0.43, windowWidth * 0.06, windowHeight * 0.08);
+  image(slots[slotResult3], windowWidth * 0.52, windowHeight * 0.43, windowWidth * 0.06, windowHeight * 0.08);
 
   console.log(slotResult1);
   console.log(slotResult2);
@@ -139,6 +139,6 @@ function textBox(){
   image(tb, windowWidth / 1.4, windowHeight / 1.2, windowWidth / 2.1, windowHeight / 1.9);
   textFont(myFont);
   textSize(ts);
-  text(t, windowWidth / 1.9, windowHeight / 1.3, windowWidth / 2.7, windowHeight / 1.9);
+  text(t, windowWidth / 1.4, windowHeight / 0.98, windowWidth / 2.7, windowHeight / 1.9);
 pop();
 }
