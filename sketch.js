@@ -28,6 +28,7 @@ function setup() {
   canvas = createCanvas(windowWidth / 1.1, windowHeight);
   canvas.parent('myCanvas');
 
+
   rectMode(CENTER);
   x = 1;
 	changeDirection = false;
