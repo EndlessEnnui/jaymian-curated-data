@@ -5,7 +5,7 @@ let display;
 let t = "Push the button to start!"
 let ts;
 
-
+let on = loadImage("images/Audio On.png")
 let mySound2;
 var x;
 var changeDirection;
@@ -34,7 +34,7 @@ function setup() {
 
   rectMode(CENTER);
   x = 1;
-  changeDirection = false;
+	changeDirection = false;
 
   background(bg, windowWidth, windowHeight, windowWidth / 2, windowHeight / 2);
   imageMode(CENTER);
@@ -45,11 +45,13 @@ function setup() {
   button.parent('button');
   button.mousePressed(roll);
 
-
+  button2 = createButton('Music')
+  button2.parent('button2')
+  button2.mousePressed(togglePlay)
 }
 
 function draw() {
-  image(sm, windowWidth * 0.455, windowHeight * 0.5, windowWidth * 0.325, windowHeight);
+image(sm, windowWidth * 0.455, windowHeight * 0.5, windowWidth * 0.325, windowHeight);
 
 
 
@@ -118,35 +120,36 @@ function textResize() {
   } else if (windowWidth > 500)
     ts = 2;
 }
-
-function jackPot() {
+function jackPot(){
   push();
 
-  //image(bg, windowWidth/2, windowHeight/2, windowWidth, windowHeight);
-  translate(x, 0, 0);
+//image(bg, windowWidth/2, windowHeight/2, windowWidth, windowHeight);
+  translate(x,0, 0);
 
   image(cg, width * 0.8, windowHeight / 2.3, width * 0.3, height * 0.6);
 
-  if (x > 5) {
-    changeDirection = true
-  } else if (x <= 0) {
-    changeDirection = false
-  }
-  if (x >= 0 && changeDirection == false) {
-    x = x + 1
-  } else if (changeDirection == true) {
-    x = x - 1
-  }
-  console.log(windowHeight);
+ if(x>5){
+   changeDirection=true}
+ else if (x<=0){
+   changeDirection=false}
+ if (x>=0 && changeDirection == false){
+   x=x+1}
+ else if(changeDirection == true){
+   x=x-1
+}
+console.log (windowHeight);
 
   pop();
 }
-
-function textBox() {
+function textBox(){
   push();
   image(tb, windowWidth / 1.4, windowHeight / 1.2, windowWidth / 2.1, windowHeight / 1.9);
   textFont(myFont);
   textSize(ts);
   text(t, windowWidth / 1.4, windowHeight / 0.98, windowWidth / 2.7, windowHeight / 1.9);
-  pop();
+pop();
 }
+function togglePlay() {
+  var mySound = document.getElementById("mySound");
+  return mySound.paused ? mySound.play() : mySound.pause();
+};
