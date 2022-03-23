@@ -45,9 +45,7 @@ function setup() {
   button.parent('button');
   button.mousePressed(roll);
 
-  button2 = createButton('MUSIC')
-  button2.parent('button2')
-  button2.mousePressed(togglePlay)
+
 }
 
 function draw() {
@@ -149,20 +147,13 @@ function textBox(){
   text(t, windowWidth / 1.4, windowHeight / 0.98, windowWidth / 2.7, windowHeight / 1.9);
 pop();
 }
-function togglePlay() {
-  var mySound = document.getElementById("mySound");
-  return mySound.paused ? mySound.play() : mySound.pause();
+//function togglePlay() {
+//  isPlaying ? mySound.pause() : mySound.loop();
+//};
 
-
-var playPromise = document.querySelector('audio').play();
-  // In browsers that don’t yet support this functionality,
-// playPromise won’t be defined.
-if (playPromise !== undefined) {
-  playPromise.then(function() {
-    // Automatic playback started!
-  }).catch(function(error) {
-    // Automatic playback failed.
-    // Show a UI element to let the user manually start playback.
-  });
-}
-};
+//mySound.onplaying = function() {
+  isPlaying = true;
+//};
+//mySound.onpause = function() {
+//  isPlaying = false;
+//};
