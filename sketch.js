@@ -4,10 +4,12 @@ let display;
 
 let t = "Push the button to start!"
 let ts;
-let mySound;
+
 let mySound2;
 var x;
 var changeDirection;
+var mySound = document.getElementById("mySound");
+var isPlaying = false;
 
 function preload() {
   slots[0] = loadImage("images/1.png");
@@ -143,3 +145,7 @@ function textBox(){
   text(t, windowWidth / 1.4, windowHeight / 0.98, windowWidth / 2.7, windowHeight / 1.9);
 pop();
 }
+function togglePlay() {
+  var mySound = document.getElementById("mySound");
+  return mySound.paused ? mySound.play() : mySound.pause();
+};

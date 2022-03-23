@@ -17,16 +17,24 @@
 
 <div style = "position:relative; left:80px; top:25px;">
 
-<div id="button"></div>
-<audio controls loop>
-  <source src="/sounds/1.mp3" type="audio/mp3"
+<div id="button" style="float: left"></div>
+
+
+
+<input id="soundIcon" style="float:left" type="image" src= "/images/Audio On.png"
+value="sound" onclick="togglePlay()"
+width="50" height="50" />
+
+
+
+
+
+
+
+<audio id="mySound" src="/sounds/1.mp3" preload="auto" loop>
 </audio>
 
 
-<audio controls loop>
-  <source src="/sounds/1.mp3" type="audio/mp3"
-</audio>
-</div>
 
           </div>
         </div>
