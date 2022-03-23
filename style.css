@@ -67,15 +67,3 @@ h1 {
   font-style: italic;
   color: #d4223d;
 }
-#soundIcon {
-  margin: auto;
-  display: block;
-  padding: 10px;
-  color: #e60000;
-
-
-
-  width: 75px;
-  height: 75px;
-  outline: none;
-}

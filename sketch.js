@@ -5,7 +5,7 @@ let display;
 let t = "Push the button to start!"
 let ts;
 
-let on = loadImage("images/Audio On.png")
+
 let mySound2;
 var x;
 var changeDirection;
@@ -45,9 +45,7 @@ function setup() {
   button.parent('button');
   button.mousePressed(roll);
 
-  button2 = createButton('Music')
-  button2.parent('button2')
-  button2.mousePressed(togglePlay)
+
 }
 
 function draw() {
@@ -149,7 +147,3 @@ function textBox(){
   text(t, windowWidth / 1.4, windowHeight / 0.98, windowWidth / 2.7, windowHeight / 1.9);
 pop();
 }
-function togglePlay() {
-  var mySound = document.getElementById("mySound");
-  return mySound.paused ? mySound.play() : mySound.pause();
-};
