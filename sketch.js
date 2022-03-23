@@ -147,13 +147,3 @@ function textBox(){
   text(t, windowWidth / 1.4, windowHeight / 0.98, windowWidth / 2.7, windowHeight / 1.9);
 pop();
 }
-//function togglePlay() {
-//  isPlaying ? mySound.pause() : mySound.loop();
-//};
-
-//mySound.onplaying = function() {
-  isPlaying = true;
-//};
-//mySound.onpause = function() {
-//  isPlaying = false;
-//};
