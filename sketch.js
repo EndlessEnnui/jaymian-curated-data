@@ -5,11 +5,11 @@ let display;
 let t = "Push the button to start!"
 let ts;
 
-
+let mySound;
 let mySound2;
 var x;
 var changeDirection;
-var mySound = document.getElementById("mySound");
+
 var isPlaying = false;
 
 function preload() {
@@ -121,7 +121,7 @@ function textResize() {
 function jackPot(){
   push();
 
-//image(bg, windowWidth/2, windowHeight/2, windowWidth, windowHeight);
+
   translate(x,0, 0);
 
   image(cg, width * 0.8, windowHeight / 2.3, width * 0.3, height * 0.6);
@@ -146,4 +146,29 @@ function textBox(){
   textSize(ts);
   text(t, windowWidth / 1.4, windowHeight / 0.98, windowWidth / 2.7, windowHeight / 1.9);
 pop();
+}
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+  play();
+} else if(keyCode === RIGHT_ARROW) {
+  pause();
+
+  }
+}
+
+function pause(){
+  if (mySound.isPlaying() === true ) { // .isPlaying() returns a boolean
+    mySound.pause();
+}
+}
+function Music(){
+      mySound.loop();
+}
+function keyPressed() {
+  if (keyCode === 49) {
+  Music();
+} else if(keyCode === 50) {
+  pause();
+
+  }
 }
