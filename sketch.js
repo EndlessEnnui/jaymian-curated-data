@@ -162,7 +162,7 @@ function pause(){
 }
 }
 function Music(){
-      mySound.loop();
+      mySound.play();
 }
 function keyPressed() {
   if (keyCode === 49) {
