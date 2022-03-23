@@ -5,6 +5,7 @@ let display;
 let t = "Push the button to start!"
 let ts;
 
+let on = loadImage("images/Audio On.png")
 let mySound2;
 var x;
 var changeDirection;
@@ -44,6 +45,9 @@ function setup() {
   button.parent('button');
   button.mousePressed(roll);
 
+  button2 = createButton('MUSIC')
+  button2.parent('button2')
+  button2.mousePressed(togglePlay)
 }
 
 function draw() {
